@@ -1,22 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vendingmachine;
 
-/**
- *
- * @author 348564469
- */
+// variables to create: array of snacks, array of quantities
+// methods: return snacks, make selection, change inventory
 public class VendingMachine {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    
+    Snacks[] SnackRowArray = new Snacks[16];
+    
+    
+    public VendingMachine() {
         
     }
-    
 }
