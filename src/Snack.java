@@ -7,14 +7,15 @@
  *
  * @author 348564469
  */
-public class B3 implements Snacks{
+public class Snack {
+
     private String name;
     private String descripAndHealthInfo;
     private double boughtPrice;
     private double sellPrice;
     private int numOfItem;
 
-    public B3() {
+    public Snack() {
         setName("");
         setDescripAndHealthInfo("");
         setBoughtPrice(1.00);
@@ -26,22 +27,18 @@ public class B3 implements Snacks{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public double getSellPrice() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public int getNum() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public String getName() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public String getDescriptionAndHealthInfo() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -94,4 +91,5 @@ public class B3 implements Snacks{
     public void setNumOfItem(int numOfItem) {
         this.numOfItem = numOfItem;
     }
+
 }

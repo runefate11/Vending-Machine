@@ -6,6 +6,7 @@ public class VendingMachine {
 
     // below is suppose to be an array of objects snacks
     String[] SnackRowArray = new String[16];
+    
 
     // constructor
     public VendingMachine() {
