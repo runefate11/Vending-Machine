@@ -8,7 +8,6 @@
  * @author 348564469
  */
 public class Snack {
-
     private String name;
     private String descripAndHealthInfo;
     private double boughtPrice;
