@@ -15,32 +15,12 @@ public class Snack {
     private double sellPrice;
     private int numOfItem;
 
-    public Snack() {
-        setName("");
-        setDescripAndHealthInfo("");
-        setBoughtPrice(1.00);
-        setSellPrice(2.00);
-        setNumOfItem(4);
-    }
-
-    public double getBoughtPrice() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public double getSellPrice() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public int getNum() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String getDescriptionAndHealthInfo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Snack(String name, String descripAndHealthInfo, double boughtPrice, double sellPrice, int numOfItem) {
+        setName(name);
+        setDescripAndHealthInfo(descripAndHealthInfo);
+        setBoughtPrice(boughtPrice);
+        setSellPrice(sellPrice);
+        setNumOfItem(numOfItem);
     }
 
     /**
