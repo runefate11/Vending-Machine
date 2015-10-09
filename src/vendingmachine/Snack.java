@@ -10,6 +10,7 @@ package vendingmachine;
  * @author 348564469
  */
 public class Snack {
+
     private String name;
     private String descripAndHealthInfo;
     private double boughtPrice;
@@ -22,6 +23,13 @@ public class Snack {
         setBoughtPrice(boughtPrice);
         setSellPrice(sellPrice);
         setNumOfItem(numOfItem);
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
     }
 
     /**
@@ -46,10 +54,24 @@ public class Snack {
     }
 
     /**
+     * @return the boughtPrice
+     */
+    public double getBoughtPrice() {
+        return boughtPrice;
+    }
+
+    /**
      * @param boughtPrice the boughtPrice to set
      */
     public void setBoughtPrice(double boughtPrice) {
         this.boughtPrice = boughtPrice;
+    }
+
+    /**
+     * @return the sellPrice
+     */
+    public double getSellPrice() {
+        return sellPrice;
     }
 
     /**

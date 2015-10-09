@@ -73,11 +73,11 @@ public class Money {
     
     /**
      * Adds the number of coins the user inputted to the total number of coins
-     * @param toonie - adds number of 
-     * @param loonie
-     * @param quarter
-     * @param dime
-     * @param nickel 
+     * @param toonie - adds number of toonies
+     * @param loonie - adds number of loonies
+     * @param quarter - adds number of quarters
+     * @param dime - adds number of dimes
+     * @param nickel  - adds number of nickels
      */
     public void add (int toonie, int loonie, int quarter, int dime, int nickel){
         numToonies += toonie;
@@ -90,7 +90,7 @@ public class Money {
 
     @Override
     /**
-     * 
+     * Returns the amounts of change
      */
     public String toString (){
         return "Toonies: " + usedToonie + "Loonies: " + usedLoonie + "Quarters: " + usedQuarter 
