@@ -23,8 +23,9 @@ public class VendingMachine {
     }
 
     // input is one of the snacks in the array list
-    public void makeSelection() {
-        
+    public String makeSelection(int snackIndex) {
+        snackArray[snackIndex].setNumOfItem(snackArray[snackIndex].getNumOfItem() - 1);
+        return snackArray[snackIndex].getName();
     }
 
     // change the number of that snack
