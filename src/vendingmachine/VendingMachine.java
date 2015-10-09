@@ -8,7 +8,9 @@ public class VendingMachine {
     Snack[] snackArray = new Snack[16];
     
     
-    // constructor
+    /**
+     * 
+     */
     public VendingMachine() {
         snackArray[0] = new Snack("Doritos", "", 1.00, 1.00, 4);
         snackArray[1] = new Snack("Lays", "", 1.00, 1.00, 4);
@@ -22,13 +24,13 @@ public class VendingMachine {
 
     // input is one of the snacks in the array list
     public void makeSelection() {
-
+        
     }
 
     // change the number of that snack
     // the input is the array pos corresponding to that snack
     public void changeInventory() {
-
+        
     }
 
     // give snack to user

@@ -19,11 +19,23 @@ public class Money {
     private int usedQuarter;
     private int usedLoonie;
     private int usedToonie;
+    
+    /**
+     * Checks if the user inputs enough money
+     * @param input - amount of money the user inputted into the machine
+     * @param price - (+) value means the user has enough money
+     *                (-) value means the user didn't input enough money
+     * @return 
+     */
     public double compare (double input, double price){
-        //display will run a check
-        //if reutnred value is negative, it should loop until the user inputs enough money
         return input - price;
     }
+    
+    /**
+     * determines how many of each coin is to be used in order to give the change
+     * @param input - amount of money the user inputted into the machine
+     * @param price - the cost of the item
+     */
     public void determine (double input, double price){
         input -= price;
         //run through each denomination and determine how much of each coin can be used
@@ -58,6 +70,15 @@ public class Money {
         input -= 0.05*usedNickel;
         numNickel -= usedNickel;
     }
+    
+    /**
+     * Adds the number of coins the user inputted to the total number of coins
+     * @param toonie - adds number of 
+     * @param loonie
+     * @param quarter
+     * @param dime
+     * @param nickel 
+     */
     public void add (int toonie, int loonie, int quarter, int dime, int nickel){
         numToonies += toonie;
         numLoonies += loonie;
@@ -65,7 +86,12 @@ public class Money {
         numDime += dime;
         numNickel += nickel;
     }
+    
+
     @Override
+    /**
+     * 
+     */
     public String toString (){
         return "Toonies: " + usedToonie + "Loonies: " + usedLoonie + "Quarters: " + usedQuarter 
                 + "Dimes: " + usedDime + "Nickels: " + usedNickel;
