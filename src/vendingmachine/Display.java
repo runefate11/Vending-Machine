@@ -10,5 +10,12 @@ package vendingmachine;
  * @author 348564469
  */
 public class Display {
+    public VendingMachine vend;
     
+    public Display (VendingMachine vm){
+        vend = vm;
+    }
+    public String Selection (int snackIndex){
+        return vend.makeSelection(snackIndex);
+    }
 }
