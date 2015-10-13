@@ -43,9 +43,8 @@ public class VendingMachine {
         }
     }
     
-    public String makeSelection (int snackIndex) {
+    public void makeSelection (int snackIndex) {
         snackArray[snackIndex].setNumOfItem(snackArray[snackIndex].getNumOfItem() - 1);
-        return "";
     }
     
     
