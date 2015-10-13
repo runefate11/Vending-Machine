@@ -9,13 +9,22 @@ package vendingmachine;
  *
  * @author 348564469
  */
+import java.util.Scanner;
 public class Display {
-    public VendingMachine vend;
-    
-    public Display (VendingMachine vm){
-        vend = vm;
+
+public static void main (String [] args){
+    Scanner keyboard = new Scanner (System.in);
+    VendingMachine vm = new VendingMachine();
+    int toonie, loonie, quarter, dime, nickel, index;
+    for (int count = 0; count <= 15; count++){
+        System.out.printf("%d %s %.2f%n",(count + 1), vm.snackArray[count].getName(),
+                vm.snackArray[count].getBoughtPrice());
     }
-    public String Selection (int snackIndex){
-        return vend.makeSelection(snackIndex);
-    }
+    System.out.print("Please enter the index of the Snack you want: ");
+    index = keyboard.nextInt();
+    if (vm.checkAvailability(index) == true)
+        vm.makeSelection(index);
+        System.out.printf("This item costs %.2f", vm.snackArray[index - 1].getBoughtPrice());
+        
+}
 }
