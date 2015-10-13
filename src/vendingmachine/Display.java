@@ -20,8 +20,9 @@ public static void main (String [] args){
         System.out.printf("%d %s %.2f%n",(count + 1), vm.snackArray[count].getName(),
                 vm.snackArray[count].getBoughtPrice());
     }
-    System.out.print("Please enter the index of the Snack you want: ");
+    System.out.print("Please enter the index of the snack you want: ");
     index = keyboard.nextInt();
+    
     if (vm.checkAvailability(index) == true)
         vm.makeSelection(index);
         System.out.printf("This item costs %.2f", vm.snackArray[index - 1].getBoughtPrice());

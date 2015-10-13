@@ -30,17 +30,23 @@ public class VendingMachine {
     }
 
     /**
-     * Tells if the snack is available. If it is available, it reduces the
-     * stock by 1
-     * @param snackIndex the user input choosing
-     * @return gives the user the snack or tells that there is none available
+     * Checks if snack is available, 
+     * @param snackIndex users choice of snack
+     * @return false being not available
+     *         true being available
      */
-    public String makeSelection(int snackIndex) {
-        if (snackArray[snackIndex].getNumOfItem() <= 0) {
-            return "Snack not available. Please make another selection.";
+    public boolean checkAvailability (int snackIndex) {
+        if (snackArray[snackIndex].getNumOfItem() == 0) {
+            return false;
         } else {
-            snackArray[snackIndex].setNumOfItem(snackArray[snackIndex].getNumOfItem() - 1);
-            return "Here is your " + snackArray[snackIndex].getName() + ".";
+            return true;
         }
     }
+    
+    public String makeSelection (int snackIndex) {
+        snackArray[snackIndex].setNumOfItem(snackArray[snackIndex].getNumOfItem() - 1);
+        return "";
+    }
+    
+    
 }
