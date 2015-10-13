@@ -90,7 +90,7 @@ public class Money {
 
     @Override
     /**
-     * Returns the amounts of change
+     * Returns the amount of change
      */
     public String toString (){
         return "Toonies: " + usedToonie + "Loonies: " + usedLoonie + "Quarters: " + usedQuarter 
