@@ -6,10 +6,9 @@ public class VendingMachine {
 
     // below is suppose to be an array of objects snacks
     Snack[] snackArray = new Snack[16];
-    
-    
+
     /**
-     * 
+     * This is the array of the snacks
      */
     public VendingMachine() {
         snackArray[0] = new Snack("Doritos", "", 1.00, 1.00, 4);
@@ -22,22 +21,18 @@ public class VendingMachine {
         snackArray[7] = new Snack("Twisters", "", 1.00, 1.00, 4);
     }
 
-    // input is one of the snacks in the array list
+    /**
+     * Tells if the snack is available. If it is available, it reduces the
+     * stock by 1
+     * @param snackIndex the user input choosing
+     * @return gives the user the snack or tells that there is none available
+     */
     public String makeSelection(int snackIndex) {
-        snackArray[snackIndex].setNumOfItem(snackArray[snackIndex].getNumOfItem() - 1);
-        return snackArray[snackIndex].getName();
+        if (snackArray[snackIndex].getNumOfItem() <= 0) {
+            return "Snack not available. Please make another selection.";
+        } else {
+            snackArray[snackIndex].setNumOfItem(snackArray[snackIndex].getNumOfItem() - 1);
+            return "Here is your " + snackArray[snackIndex].getName() + ".";
+        }
     }
-
-    // change the number of that snack
-    // the input is the array pos corresponding to that snack
-    public void changeInventory() {
-        
-    }
-
-    // give snack to user
-    // input is the array pos corresponding to it
-    public void giveSnack() {
-
-    }
-    
 }
