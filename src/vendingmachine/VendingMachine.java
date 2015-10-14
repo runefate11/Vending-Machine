@@ -47,5 +47,4 @@ public class VendingMachine {
         snackArray[snackIndex].setNumOfItem(snackArray[snackIndex].getNumOfItem() - 1);
     }
     
-    
 }
