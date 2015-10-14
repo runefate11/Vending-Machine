@@ -22,6 +22,12 @@ public class Money {
     private int usedQuarter;
     private int usedLoonie;
     private int usedToonie;
+    //These variables track how much of each coin was entered
+    private int nickel;
+    private int dime;
+    private int quarter;
+    private int loonie;
+    private int toonie;
     //Total change to be returned
     boolean changePossible = true;
     //Tracks net profits
@@ -105,22 +111,45 @@ public class Money {
      */
     public void add (int toonie, int loonie, int quarter, int dime, int nickel){
         numToonies += toonie;
+        this.toonie = toonie;
         numLoonies += loonie;
+        this.loonie = loonie;
         numQuarters += quarter;
+        this.quarter = quarter;
         numDime += dime;
+        this.dime = dime;
         numNickel += nickel;
+        this.nickel = nickel;
+    }
+    /**
+     * Takes coins away from main stock
+     * @param toonie - subtract number of toonies
+     * @param loonie - subtract number of loonies
+     * @param quarter - subtract number of quarters
+     * @param dime - subtract number of dimes
+     * @param nickel - subtract number of nickels
+     */
+    public void subtract (int toonie, int loonie, int quarter, int dime, int nickel){
+        numToonies -= toonie;
+        numLoonies -= loonie;
+        numQuarters -= quarter;
+        numDime -= dime;
+        numNickel -= nickel;
     }
     @Override
     /**
      * Returns the amount of change
-     * Response will vary depending 
+     * Response will vary depending on whether change is possible 
      */
     public String toString (){
         if (changePossible == true){
-        return "Change due. Toonies: " + usedToonie + "Loonies: " + usedLoonie + "Quarters: " + usedQuarter 
+        return "Change due. Toonies: " + usedToonie + "Loonies: " + usedLoonie 
+                + "Quarters: " + usedQuarter 
                 + "Dimes: " + usedDime + "Nickels: " + usedNickel;
         }
         else
-            return "Sorry. There is not enough change. We will refund you.";
+            return "Sorry. There is not enough change. Refund due. Toonies: "
+                    + toonie + "Loonies: " + loonie + "Quarters: " + quarter 
+                    + "Dimes: " + dime + "Nickels: " + nickel;
     }
 }
