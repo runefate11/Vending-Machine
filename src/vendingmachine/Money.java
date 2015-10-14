@@ -136,6 +136,21 @@ public class Money {
         numDime -= dime;
         numNickel -= nickel;
     }
+    /**
+     * Adds coins to the machine's bank
+     * @param toonie    The number of toonies to add
+     * @param loonie    The number of loonies to add
+     * @param quarter   The number of quarters to add
+     * @param dime      The number of dimes to add
+     * @param nickel    The number of nickels to add
+     */
+    public void stock (int toonie, int loonie, int quarter, int dime, int nickel){
+        numToonies += toonie;
+        numLoonies += loonie;
+        numQuarters += quarter;
+        numDime += dime;
+        numNickel += nickel;
+    }
     @Override
     /**
      * Returns the amount of change
