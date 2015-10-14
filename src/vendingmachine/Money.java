@@ -7,19 +7,23 @@ package vendingmachine;
 /**
  *
  * @author GW9999
+ * Gregory Wong
  */
 public class Money {
+    //These variables track how many of each coin there is
     private int numNickel = 100;
     private int numDime = 100;
     private int numQuarters = 100;
     private int numLoonies = 100;
     private int numToonies = 100;
+    //These variables track how much of each coin will be outputted for change
     private int usedNickel;
     private int usedDime;
     private int usedQuarter;
     private int usedLoonie;
     private int usedToonie;
-    
+    //Tracks net profits
+    private double profit = 0;
     /**
      * Checks if the user inputs enough money
      * @param input - amount of money the user inputted into the machine
@@ -70,7 +74,14 @@ public class Money {
         input -= 0.05*usedNickel;
         numNickel -= usedNickel;
     }
-    
+    /**
+     * Calculates profit from each item and adds to net profit
+     * @param bought Price that item was purchased from supplier for
+     * @param sold   Selling price
+     */
+    public void profit (double bought, double sold){
+        profit += (bought - sold);
+    }
     /**
      * Adds the number of coins the user inputted to the total number of coins
      * @param toonie - adds number of toonies
@@ -93,7 +104,7 @@ public class Money {
      * Returns the amount of change
      */
     public String toString (){
-        return "Toonies: " + usedToonie + "Loonies: " + usedLoonie + "Quarters: " + usedQuarter 
+        return "Change due. Toonies: " + usedToonie + "Loonies: " + usedLoonie + "Quarters: " + usedQuarter 
                 + "Dimes: " + usedDime + "Nickels: " + usedNickel;
     }
 }
