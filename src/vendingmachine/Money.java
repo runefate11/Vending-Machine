@@ -22,6 +22,8 @@ public class Money {
     private int usedQuarter;
     private int usedLoonie;
     private int usedToonie;
+    //Total change to be returned
+    boolean changePossible = true;
     //Tracks net profits
     private double profit = 0;
     /**
@@ -73,6 +75,17 @@ public class Money {
             usedNickel = numNickel;
         input -= 0.05*usedNickel;
         numNickel -= usedNickel;
+        //Check if change is possible
+        if (input > 0){
+            changePossible = false;
+            numToonies += usedToonie;
+            numLoonies += usedLoonie;
+            numQuarters += usedQuarter;
+            numDime += usedDime;
+            numNickel += usedNickel;
+        }
+        else
+            changePossible = true;
     }
     /**
      * Calculates profit from each item and adds to net profit
@@ -97,14 +110,17 @@ public class Money {
         numDime += dime;
         numNickel += nickel;
     }
-    
-
     @Override
     /**
      * Returns the amount of change
+     * Response will vary depending 
      */
     public String toString (){
+        if (changePossible == true){
         return "Change due. Toonies: " + usedToonie + "Loonies: " + usedLoonie + "Quarters: " + usedQuarter 
                 + "Dimes: " + usedDime + "Nickels: " + usedNickel;
+        }
+        else
+            return "Sorry. There is not enough change. We will refund you.";
     }
 }
