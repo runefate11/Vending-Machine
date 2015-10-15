@@ -9,7 +9,7 @@ public class VendingMachine {
     Snack[] snackArray = new Snack[16];
 
     /**
-     * This is the array of the snacks
+     * This is the array of the snacks.
      */
     public VendingMachine() {
         snackArray[0] = new Snack("Doritos", "For the bold. Does not contain nuts.", 1.00, 1.00, 4);
