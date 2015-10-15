@@ -7,11 +7,11 @@ public class Display {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
-        //Summon objects
+        //create objects
         VendingMachine vm = new VendingMachine();
         Money m = new Money();
 
-        //Variables for inputting each denomination
+        // declare variables for inputting each denomination
         int toonie, loonie, quarter, dime, nickel, index;
 
         double input; //Total value of user money input
@@ -31,24 +31,23 @@ public class Display {
             userChoice = keyboard.nextInt();
 
             if (userChoice == 0) { //user wants to set num of coins to standard amount
-                System.out.println(m);//system check
                 m.resetStockOfCoins();
                 System.out.println("The number of each coin is now set to 100.");
             } else if (userChoice == 1) { //user wants to set all stock of items to max(4)
                 vm.resetStockOfSnacks();
                 System.out.println("All items have been stocked up to 4.");
             } else if (userChoice == 2) { //user wants to see the profit
-                System.out.println("The profit of this machine is $" + m.getProfit());
+                System.out.printf("The profit of this machine is $%.2f \n", m.getProfit());
             } else if (userChoice == 3) { //user wants to reset profit to 0
-                System.out.println("The profit of this machine is $" + m.getProfit());//system check
+                System.out.printf("The profit of this machine is $%.2f \n", m.getProfit());//system check
                 m.resetProfit();
-                System.out.println("The profit of this machine is $" + m.getProfit());//system check
+                System.out.printf("The profit of this machine is $%.2f \n", m.getProfit());//system check
                 System.out.println("The profit of this machine has been reset to $0.00");
             } else if (userChoice == 4) { //user choose to purchase an item
                 //output list of snacks and their descriptions
                 for (int count = 0; count <= 15; count++) {
                     System.out.printf("%d - %s %.2f%n%s%n", (count + 1), vm.snackArray[count].getName(),
-                            vm.snackArray[count].getBoughtPrice(),
+                            vm.snackArray[count].getSellPrice(),
                             vm.snackArray[count].getDescripAndHealthInfo());
                 }
                 //Ask user which snack they want and loops until an available snack is chosen
@@ -93,9 +92,10 @@ public class Display {
                 if (m.changePossible == true) //Determine profit from the item
                 {
                     m.profit(vm.snackArray[index - 1].getBoughtPrice(), vm.snackArray[index - 1].getSellPrice());
+                    System.out.println("Here are your " + vm.snackArray[index - 1].getName());
                 } else //return money
                 {
-                    m.add(-1 * toonie, -1 * loonie, -1 * quarter, -1 * dime, -1 * nickel);
+                    m.subtract(toonie, loonie, quarter, dime, nickel);
                 }
                 //display the amount of change due or if change was possible
                 System.out.println(m);

@@ -101,7 +101,7 @@ public class Money {
      * @param sold   Selling price
      */
     public void profit (double bought, double sold){
-        profit += (bought - sold);
+        profit += (sold - bought);
     }
     
     /**
