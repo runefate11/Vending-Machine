@@ -82,8 +82,7 @@ public class Display {
                         System.out.println("");
                     }
                 } while (m.compare(input, vm.snackArray[index - 1].getSellPrice()) < 0);
-                //reduce inventory of snack
-                vm.makeSelection(index - 1);
+
                 //add inputted coins to change stock
                 m.add(toonie, loonie, quarter, dime, nickel);
                 //determine the amount of change due
@@ -93,6 +92,8 @@ public class Display {
                 {
                     m.profit(vm.snackArray[index - 1].getBoughtPrice(), vm.snackArray[index - 1].getSellPrice());
                     System.out.println("Here are your " + vm.snackArray[index - 1].getName());
+                    //reduce inventory of snack
+                    vm.makeSelection(index - 1);
                 } else //return money
                 {
                     m.subtract(toonie, loonie, quarter, dime, nickel);
