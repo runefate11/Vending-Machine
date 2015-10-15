@@ -31,21 +31,30 @@ public class VendingMachine {
     }
 
     /**
-     * Checks if snack is available, 
-     * @param snackIndex users choice of snack
-     * @return false being not available
-     *         true being available
+     * reset number of items to 4
      */
-    public boolean checkAvailability (int snackIndex) {
+    public void resetStockOfSnacks() {
+        for (int count = 0; count <= 15; count++) {
+            snackArray[count].setNumOfItem(4);
+        }
+    }
+
+    /**
+     * Checks if snack is available,
+     *
+     * @param snackIndex users choice of snack
+     * @return false being not available true being available
+     */
+    public boolean checkAvailability(int snackIndex) {
         if (snackArray[snackIndex].getNumOfItem() == 0) {
             return false;
         } else {
             return true;
         }
     }
-    
-    public void makeSelection (int snackIndex) {
+
+    public void makeSelection(int snackIndex) {
         snackArray[snackIndex].setNumOfItem(snackArray[snackIndex].getNumOfItem() - 1);
     }
-    
+
 }

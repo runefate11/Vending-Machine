@@ -32,6 +32,7 @@ public class Money {
     boolean changePossible = true;
     //Tracks net profits
     private double profit = 0;
+    
     /**
      * Checks if the user inputs enough money
      * @param input - amount of money the user inputted into the machine
@@ -93,6 +94,7 @@ public class Money {
         else
             changePossible = true;
     }
+    
     /**
      * Calculates profit from each item and adds to net profit
      * @param bought Price that item was purchased from supplier for
@@ -101,6 +103,22 @@ public class Money {
     public void profit (double bought, double sold){
         profit += (bought - sold);
     }
+    
+    /**
+     * tells the user what the total profit is
+     * @return the profit of the machine
+     */
+    public double getProfit (){
+        return profit;
+    }
+    
+    /**
+     * sets the profit of the machine  to zero
+     */
+    public void resetProfit (){
+        profit = 0;
+    }
+    
     /**
      * Adds the number of coins the user inputted to the total number of coins
      * @param toonie - adds number of toonies
@@ -121,6 +139,7 @@ public class Money {
         numNickel += nickel;
         this.nickel = nickel;
     }
+    
     /**
      * Takes coins away from main stock
      * @param toonie - subtract number of toonies
@@ -136,6 +155,7 @@ public class Money {
         numDime -= dime;
         numNickel -= nickel;
     }
+    
     /**
      * Adds coins to the machine's bank
      * @param toonie    The number of toonies to add
@@ -151,6 +171,18 @@ public class Money {
         numDime += dime;
         numNickel += nickel;
     }
+    
+    /**
+     * reset stock of coins to 100
+     */
+    public void resetStockOfCoins (){
+        numToonies = 100;
+        numLoonies = 100;
+        numQuarters = 100;
+        numDime = 100;
+        numNickel = 100;
+    }
+    
     @Override
     /**
      * Returns the amount of change
@@ -158,13 +190,13 @@ public class Money {
      */
     public String toString (){
         if (changePossible == true){
-        return "Change due. Toonies: " + usedToonie + "Loonies: " + usedLoonie 
-                + "Quarters: " + usedQuarter 
-                + "Dimes: " + usedDime + "Nickels: " + usedNickel;
+        return "Change due. Toonies: " + usedToonie + " Loonies: " + usedLoonie 
+                + " Quarters: " + usedQuarter 
+                + " Dimes: " + usedDime + " Nickels: " + usedNickel;
         }
         else
             return "Sorry. There is not enough change. Refund due. Toonies: "
-                    + toonie + "Loonies: " + loonie + "Quarters: " + quarter 
-                    + "Dimes: " + dime + "Nickels: " + nickel;
+                    + toonie + " Loonies: " + loonie + " Quarters: " + quarter 
+                    + " Dimes: " + dime + " Nickels: " + nickel;
     }
 }
