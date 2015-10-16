@@ -32,6 +32,7 @@ public class Money {
     boolean changePossible = true;
     //Tracks net profits
     private double profit = 0;
+    double check;
     
     /**
      * Checks if the user inputs enough money
@@ -50,37 +51,38 @@ public class Money {
      * @param price - the cost of the item
      */
     public void determine (double input, double price){
-        input -= price;
+        input = input*100 -  100*price;
         //run through each denomination and determine how much of each coin can be used
-        if ((int)(input/2.0) <= numToonies)
-            usedToonie = (int)(input/2.0);
+        if ((int)(input/200) <= numToonies)
+            usedToonie = (int)(input/200);
         else
             usedToonie = numToonies;
-        input -= 2.0*usedToonie;
+        input -= 200*usedToonie;
         numToonies -= usedToonie;
-        if ((int)(input/1.0) <= numLoonies)
-            usedLoonie = (int)(input/1.0);
+        check = input;
+        if ((int)(input/100) <= numLoonies)
+            usedLoonie = (int)(input/100);
         else
             usedLoonie = numLoonies;
-        input -= 1.0*usedLoonie;
+        input -= 100*usedLoonie;
         numLoonies -= usedLoonie;
-        if ((int)(input/0.25) <= numQuarters)
-            usedQuarter = (int)(input/0.25);
+        if ((int)(input/25) <= numQuarters)
+            usedQuarter = (int)(input/25);
         else
             usedQuarter = numQuarters;
-        input -= 0.25*usedQuarter;
+        input -= 25*usedQuarter;
         numQuarters -= usedQuarter;
-        if ((int)(input/0.10) <= numDime)
-            usedDime = (int)(input/0.10);
+        if ((int)(input/10) <= numDime)
+            usedDime = (int)(input/10);
         else
             usedDime = numDime;
-        input -= 0.10*usedDime;
+        input -= 10*usedDime;
         numDime -= usedDime;
-        if ((int)(input/0.05) <= numNickel)
-            usedNickel = (int)(input/0.05);
+        if ((int)(input/5) <= numNickel)
+            usedNickel = (int)(input/5);
         else
             usedNickel = numNickel;
-        input -= 0.05*usedNickel;
+        input -= 5*usedNickel;
         numNickel -= usedNickel;
         //Check if change is possible
         if (input > 0){
