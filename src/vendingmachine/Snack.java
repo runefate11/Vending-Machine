@@ -4,19 +4,25 @@ package vendingmachine;
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
-/**
- *
- * @author 348564469
+ * By: Devanjith
  */
 public class Snack {
 
-    private String name;
+    // variables for snack identities
+    private String name; 
     private String descripAndHealthInfo;
     private double boughtPrice;
     private double sellPrice;
     private int numOfItem;
 
+    /**
+     * 
+     * @param name - name of snack
+     * @param descripAndHealthInfo - description of snack and health info
+     * @param boughtPrice - price bought from the company
+     * @param sellPrice - price sold to user
+     * @param numOfItem - number of each snack
+     */
     public Snack(String name, String descripAndHealthInfo, double boughtPrice, double sellPrice, int numOfItem) {
         setName(name);
         setDescripAndHealthInfo(descripAndHealthInfo);

@@ -2,8 +2,11 @@ package vendingmachine;
 
 import java.util.Scanner; // import for keyabord use
 
+/**
+ * Main Body program for the vending machine
+ * By: Devanjith (1st half of functionality) and Gregory (2nd half)
+ */
 public class Display {
-
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
@@ -39,9 +42,7 @@ public class Display {
             } else if (userChoice == 2) { //user wants to see the profit
                 System.out.printf("The profit of this machine is $%.2f \n", m.getProfit());
             } else if (userChoice == 3) { //user wants to reset profit to 0
-                System.out.printf("The profit of this machine is $%.2f \n", m.getProfit());//system check
                 m.resetProfit();
-                System.out.printf("The profit of this machine is $%.2f \n", m.getProfit());//system check
                 System.out.println("The profit of this machine has been reset to $0.00");
             } else if (userChoice == 4) { //user choose to purchase an item
                 //output list of snacks and their descriptions
@@ -88,14 +89,12 @@ public class Display {
                 //determine the amount of change due
                 m.determine(input, vm.snackArray[index - 1].getSellPrice());
                 //check if change is possible
-                if (m.changePossible == true) //Determine profit from the item
-                {
+                if (m.changePossible == true) { //Determine profit from the item
                     m.profit(vm.snackArray[index - 1].getBoughtPrice(), vm.snackArray[index - 1].getSellPrice());
                     System.out.println("Here are your " + vm.snackArray[index - 1].getName());
                     //reduce inventory of snack
                     vm.makeSelection(index - 1);
-                } else //return money
-                {
+                } else {//return money
                     m.subtract(toonie, loonie, quarter, dime, nickel);
                 }
                 //display the amount of change due or if change was possible

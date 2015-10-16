@@ -2,7 +2,7 @@ package vendingmachine;
 
 // variables to create: array of snacks, array of quantities
 // methods: return snacks, make selection, change inventory
-//Devanjith
+// By: Devanjith and Catherine
 public class VendingMachine {
 
     // below is suppose to be an array of objects snacks
@@ -41,9 +41,8 @@ public class VendingMachine {
 
     /**
      * Checks if snack is available,
-     *
      * @param snackIndex users choice of snack
-     * @return false being not available true being available
+     * @return false being not available, true being available
      */
     public boolean checkAvailability(int snackIndex) {
         if (snackArray[snackIndex].getNumOfItem() == 0) {
@@ -53,6 +52,10 @@ public class VendingMachine {
         }
     }
 
+    /**
+     * reduces numOfItem by 1 for the selected snack
+     * @param snackIndex - player's choice of snack
+     */
     public void makeSelection(int snackIndex) {
         snackArray[snackIndex].setNumOfItem(snackArray[snackIndex].getNumOfItem() - 1);
     }

@@ -5,8 +5,7 @@ Input must be in groups of 5 cents at smallest and prices must be in groups of 5
 package vendingmachine;
 
 /**
- *
- * @author GW9999
+ * All the calculations regarding the coins and the profit of the machine
  * Gregory Wong
  */
 public class Money {
@@ -39,7 +38,7 @@ public class Money {
      * @param input - amount of money the user inputted into the machine
      * @param price - (+) value means the user has enough money
      *                (-) value means the user didn't input enough money
-     * @return 
+     * @return - the difference of the values
      */
     public double compare (double input, double price){
         return input - price;
@@ -100,7 +99,7 @@ public class Money {
     /**
      * Calculates profit from each item and adds to net profit
      * @param bought Price that item was purchased from supplier for
-     * @param sold   Selling price
+     * @param sold   Price sold to the user
      */
     public void profit (double bought, double sold){
         profit += (sold - bought);
@@ -115,7 +114,7 @@ public class Money {
     }
     
     /**
-     * sets the profit of the machine  to zero
+     * sets the profit of the machine to zero
      */
     public void resetProfit (){
         profit = 0;
